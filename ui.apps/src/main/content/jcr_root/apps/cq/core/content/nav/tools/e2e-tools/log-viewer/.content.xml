@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:description="Download logs from remote AEM instances"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Log Viewer"
+          href="/apps/e2e-tools/content/log-viewer/dashboard.html"
+          id="e2e-log-viewer"
+          target="_blank"/>

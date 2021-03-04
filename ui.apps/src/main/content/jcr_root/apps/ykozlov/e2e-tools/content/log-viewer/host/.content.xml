@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[granite:FinalArea,sling:VanityPath]"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Remote Logs"
+    sling:resourceType="granite/ui/components/shell/page"
+    consoleId="remote-logs"
+    contentPath="/content"
+    currentView="${state[&quot;shell.collectionpage.layoutId&quot;].string}"
+    pageURITemplate="/libs/granite/operations/content/diagnosis.html">
+    <head jcr:primaryType="nt:unstructured">
+        <clientlibs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+            categories="[coralui3,granite.ui.coral.foundation,e2e-tools.log-viewer]"/>
+    </head>
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <content
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="e2e-tools/components/tools/log-viewer/host-logs"/>
+        </items>
+    </content>
+    <title
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="e2e-tools/components/tools/log-viewer/title"/>
+    <actions jcr:primaryType="nt:unstructured">
+        <primary jcr:primaryType="nt:unstructured">
+            <back
+                granite:id="backButton"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/anchorbutton"
+                href="/apps/e2e-tools/content/log-viewer/dashboard.html"
+                icon="chevronLeft"
+                variant="actionBar"/>
+        </primary>
+    </actions>
+</jcr:root>

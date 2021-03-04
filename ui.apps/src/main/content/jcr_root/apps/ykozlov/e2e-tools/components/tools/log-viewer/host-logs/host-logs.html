@@ -1,0 +1,45 @@
+<div class="panelWithMargin">
+        <table is="coral-table" class="panelWithMarginTop" >
+            <colgroup>
+                <col is="coral-table-column">
+                <col is="coral-table-column">
+            </colgroup>
+            <thead is="coral-table-head">
+            <tr is="coral-table-row">
+                <th is="coral-table-headercell">
+                    File
+                </th>
+                <th is="coral-table-headercell">
+                    Modified
+                </th>
+                <th is="coral-table-headercell">
+                    Size
+                </th>
+                <th is="coral-table-headercell">
+                    Download
+                </th>
+            </tr>
+            </thead>
+            <tbody is="coral-table-body">
+        	<sly data-sly-use.logs="com.github.ykozlov.aem.logs.core.models.LogList" data-sly-list="${logs.logs}">
+                <tr is="coral-table-row">
+                <td is="coral-table-cell" width="200px">
+                    <a class="foundation-layout-table-cellwrapper" href="/apps/e2e-tools/content/log-viewer/download?ext=raw&url=${item.url}" target=_blank>${item.path}</a>
+                </td>
+                <td is="coral-table-cell">
+                    ${item.lastModified}
+                </td>
+                    <td is="coral-table-cell">
+                        ${item.size}
+                    </td>
+                <td is="coral-table-cell">
+                    <a class="foundation-layout-table-cellwrapper" href="/apps/e2e-tools/content/log-viewer/download?ext=zip&url=${item.url}" >
+    				    <coral-icon icon="dataDownload" />
+                    </a>
+                </td>
+            </tr>
+		    </sly>
+
+            </tbody>
+        </table>
+</div>
