@@ -19,7 +19,7 @@ From the root directory, run ``mvn -PautoInstallPackage clean install`` to build
 
 ## Usage
 
-In AEM Author go to Tools / E2E Tools / Log Viewer or navigate to http://localhost:4502/apps/e2e-tools/content/log-viewer/dashboard.html
+In AEM Author go to Tools / E2E Tools / Log Viewer or navigate to http://localhost:4502/apps/e2e-tools/content/log-viewer/dashboard.html .
 Open the dashboard and click the Add button .
 
 ![author](docs/add-host-author.png)
@@ -31,3 +31,11 @@ To access the logs files of a publish instance enter its address:port. This is s
 
 Click on a host to see the files in remote crx-quickstart/logs directory:
 ![author](docs/aem-logs.png)
+
+## How it works
+The project uses the [Apache Sling File System Resource Provider](https://github.com/apache/sling-org-apache-sling-fsresource) 
+to mount crx-quickstart/logs in the operating system's file system to the _/logs_ virtual tree in AEM.
+See [org.apache.sling.fsprovider.internal.FsResourceProvider-logs.xml](ui.apps/src/main/content/jcr_root/apps/ykozlov/e2e-tools/config/org.apache.sling.fsprovider.internal.FsResourceProvider-logs.xml)
+
+With this configuration each instance can return its logs files as http://localhost:4502/logs/error.log, http://localhost:4502/logs/access.log etc.
+To get the catalog use http://localhost:4502/logs.-1.json
