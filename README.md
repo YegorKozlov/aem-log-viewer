@@ -2,7 +2,7 @@
 
 
 ## Motivation
-Typically there are two options to view/download logs of a running AEM instance:
+In the absense of Splunk users have two options to view/download logs of a running AEM instance:
 1. Copy logs from a remote AEM instance via scp.   
 2. Use the [WebTail](https://sling.apache.org/documentation/development/logging.html#webtail) plugin in OSGi System Console.
 
